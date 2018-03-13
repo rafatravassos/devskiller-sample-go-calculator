@@ -23,6 +23,17 @@ find a detailed guide for creating your own programming project.
 **Please make sure to read our [Getting started with programming
 projects](https://goo.gl/gkQU4J) guide first**
 
+## Technical details
+
+We use Glide to to manage dependencies.
+
+You project will be built with the following commands:
+
+```sh
+glide update
+go test $(go list ./... | grep -v /vendor/) -v -timeout 1m
+```
+
 ## Automatic assessment
 
 It is possible to automatically assess the solution posted by the candidate.
