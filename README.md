@@ -25,13 +25,13 @@ projects](https://goo.gl/gkQU4J) guide first**
 
 ## Technical details
 
-We use Glide to to manage dependencies.
+We use [Go mod](https://golang.org/ref/mod) to manage dependencies in Golang programming tasks.
 
 You project will be built with the following commands:
 
 ```sh
-glide update
-go test $(go list ./... | grep -v /vendor/) -v -timeout 1m
+go mod tidy
+go test ./... -v -timeout 1m
 ```
 
 ## Automatic assessment
@@ -45,7 +45,7 @@ There are two kinds of unit tests:
 1. **Candidate tests** - unit tests that the candidate can see during the test
    should be used only for basic verification and to guide the candidate in
    understanding the requirements of the project. Candidate tests WILL NOT be used
-   to calculate the final score.
+   to calculate the final score. 
 2. **Verification tests** - unit tests that the candidate can’t see during the
    test. Files containing verification tests will be added to the project after
    the candidate finishes the test and will be executed during the verification
